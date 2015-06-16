@@ -1,0 +1,570 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <title>&#200;&#242;&#238;&#227;&#238;&#226;&#251;&#233; &#242;&#229;&#241;&#242;</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<style type="text/css">
+.off {display:none}
+.on {display: inline-block; color: blue;}
+</style>
+
+  <script language="javascript">
+    
+	
+	function start()
+	{
+          var totalcount = 0;
+          var itm = document.getElementById("g1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	totalcount++;
+                var ans = 0;
+		var citem=document.getElementById("g"+totalcount+"r1");
+		while (citem!=undefined)
+		{
+			ans++;
+			citem.selectedIndex= 0;
+			var cspan = document.getElementById("r"+ans+"g"+totalcount);
+			cspan.style.color="black";
+			
+			citem = document.getElementById("g"+totalcount+"r"+(ans+1));
+		}
+		itm = document.getElementById("g"+(totalcount+1)+"r1"); 
+	  }
+
+
+
+          var totalcount = 0;
+          var itm = document.getElementById("f1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	totalcount++;
+                var ans = 0;
+		var citem=document.getElementById("f"+totalcount+"r1");
+		while (citem!=undefined)
+		{
+			ans++;
+			citem.checked = false;
+			var cspan = document.getElementById("r"+ans+"f"+totalcount);
+			cspan.style.color="black";
+			
+			citem = document.getElementById("f"+totalcount+"r"+(ans+1));
+		}
+		itm = document.getElementById("f"+(totalcount+1)+"r1"); 
+	  }
+
+
+	  document.getElementById("result").innerHTML = "";
+	}
+	
+
+
+
+
+
+	function finish()
+	{
+	var cor=0;
+		
+          var j = 0;
+          var itm = document.getElementById("g1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	j++;
+		
+		var ans = 0;
+		var citem=document.getElementById("g"+j+"r1");
+		var ck = 0;
+		while (citem!=undefined)
+		{
+			ans++;
+			var cspan = document.getElementById("r"+ans+"g"+j);
+			if (citem.value == cspan.value) {
+				cspan.style.color = "blue";
+				ck++;
+			}
+			else {
+				document.getElementById("g"+j+"l"+ans).className = "on";
+				cspan.style.color = "red";
+			}
+
+			
+			citem = document.getElementById("g"+j+"r"+(ans+1));
+
+		}
+		if (ck == ans){
+			cor++;
+		}
+        itm = document.getElementById("g"+(j+1)+"r1"); 
+	}
+
+
+
+
+	var pr=j;
+	
+          var j = 0;
+          var itm = document.getElementById("f1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	j++;
+		
+		var ans = 0;
+		var citem=document.getElementById("f"+j+"r1");
+		var ck = 0;
+		while (citem!=undefined)
+		{
+			ans++;
+			var cspan = document.getElementById("r"+ans+"f"+j);
+			if (citem.checked == true && citem.value == "1") {
+				cspan.style.color = "blue";
+			}
+			if (citem.checked == true && citem.value == "0") {
+				ck++;
+				cspan.style.color = "red";
+			}
+			if (citem.checked == false && citem.value == "0") {
+				cspan.style.color = "black";
+			}
+			if (citem.checked == false && citem.value == "1") {
+				ck++;
+				cspan.style.color = "blue";
+			}
+			
+			citem = document.getElementById("f"+j+"r"+(ans+1));
+		}
+		if (ck == 0){
+			cor++;
+		}
+        itm = document.getElementById("f"+(j+1)+"r1"); 
+	}
+	  pr=pr+j;
+	  document.getElementById("result").innerHTML = "Количество правильных ответов: "+cor+" из "+pr+" ("+Math.round(cor*100/pr)+"%)";
+
+
+
+
+
+	}
+	
+	
+	function asd(gg){
+	  var mm=new Array();
+	  var pos=0;
+	  
+	  var tr=document.getElementsByName('g'+gg);
+      for(k=0;k<tr.length;k++) 
+        if(tr[k].selectedIndex>0) {mm[pos]=tr[k].selectedIndex; pos++;}
+
+
+
+      for(k=0;k<tr.length;k++){ 
+            for(i=0;i<tr[k].options.length;i++) tr[k].options[i].disabled=false;
+            for(i=0;i<pos;i++) tr[k].options[mm[i]].disabled=true;
+        }
+	   
+	}
+	
+  </script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="start()">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Итоговый тест</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="umk_osnovy_pedagogiki.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<form>
+1. Что изучает педагогика
+<br><input type="checkbox" id="f1r1" name="f1" value="1"><span id="r1f1">а) педагогический процесс, обеспечивающий  развитие человека на протяжении всей жизни</span><br/>
+<input type="checkbox" id="f1r2" name="f1" value="0"><span id="r2f1">b)	личность учащегося</span><br/>
+<input type="checkbox" id="f1r3" name="f1" value="0"><span id="r3f1">c)	социальные структуры и их влияние на жизнедеятельность человека</span><br/>
+<input type="checkbox" id="f1r4" name="f1" value="0"><span id="r4f1">d)	условия продуктивного  общения учащегося и учителя</span><br/>
+<br/>
+<br/>
+2. Есть ли общие черты воспитания для всех исторических этапов  развития общества? Какие ответы соответствуют истине
+<br><input type="checkbox" id="f2r1" name="f2" value="0"><span id="r1f2">а) каждая эпоха  выдвигает свой идеал личности, поэтому общих черт быть не может</span><br/>
+<input type="checkbox" id="f2r2" name="f2" value="0"><span id="r2f2">b)	воспитание – категория вечная и неизменная, поэтому характеризуется  общими чертами для всех эпох</span><br/>
+<input type="checkbox" id="f2r3" name="f2" value="1"><span id="r3f2">c)	воспитание определяется как общими характеристиками, присущими всем этапам развития общества, так и специфическими, которые выдвигает  
+каждая историческая эпоха</span><br/>
+<br/>
+<br/>
+3. Установите правильно соответствие
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g1" value="5">a) Образование</span></TD>            
+<TD>	a-<select type="select" id="g1r1" name="g1" onchange="asd(1)"><option selected>...<option>1<option>2<option>3<option>4<option value="5">5</select><span id="g1l1" class="off" >Правильный ответ: 5</span><br/></TD></TR>
+
+<TR><TD><span id="r2g1" value="4">b) Воспитание</span></TD>
+<TD>	b-<select type="select" id="g1r2" name="g1" onchange="asd(1)"><option selected>...<option>1<option>2<option>3<option value="4">4<option>5</select><span id="g1l2" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+
+<TR><TD><span id="r3g1" value="2">c) Развитие</span></TD> 
+<TD>	c-<select type="select" id="g1r3" name="g1" onchange="asd(1)"><option selected>...<option>1<option value="2">2<option>3<option>4<option>5</select><span id="g1l3" class="off" >Правильный ответ: 2</span><br/></TD></TR>
+
+<TR><TD><span id="r4g1" value="1">d) Социализация</span></TD> 
+<TD>	d-<select type="select" id="g1r4" name="g1" onchange="asd(1)"><option selected>...<option value="1">1<option>2<option>3<option>4<option>5</select><span id="g1l4" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+
+<TR><TD><span id="r5g1" value="3">e) Обучение</span></TD> 
+<TD>	e-<select type="select" id="g1r5" name="g1" onchange="asd(1)"><option selected>...<option>1<option>2<option value="3">3<option>4<option>5</select><span id="g1l5" class="off" >Правильный ответ: 3</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<TABLE BORDER=0>
+<TR><TD>1) непрерывный процесс интеграции личности в социальную систему путем адаптации и творческой самореализации</TR></TD>
+<TR><TD>2) процесс и результат количественных и качественных изменений различных сторон личности, ее взросление</TR></TD>
+<TR><TD>3) специально организованный процесс взаимодействия учителя и учащихся, в результате которого происходит усвоение знаний и способов деятельности</TR></TD>
+<TR><TD>4) целенаправленный процесс формирования и развития отношений личности с миром и с самим собой в специально организованных условиях – в школе, семье, внешкольных организациях</TR></TD>
+<TR><TD>5) процесс и результат усвоения человеком опыта поколений в виде системы знаний, умений и навыков, способов творческой деятельности, отношений</TR></TD>
+</TABLE>
+<br/>
+<br/>
+4. Укажите социокультурные тенденции и соответствующие им направления модернизации высшего образования
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g2" value="4">a) Массовость высшей школы</span></TD>            
+<TD>	a-<select type="select" id="g2r1" name="g2" onchange="asd(2)"><option selected>...<option>1<option >2<option>3<option value="4">4</select><span id="g2l1" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+
+<TR><TD><span id="r2g2" value="3">b) Нарастающий процесс глобализации</span></TD>
+<TD>	b-<select type="select" id="g2r2" name="g2" onchange="asd(2)"><option selected>...<option>1<option>2<option value="3">3<option>4</select><span id="g2l2" class="off" >Правильный ответ: 3</span><br/></TD></TR>
+
+<TR><TD><span id="r3g2" value="2">c) Ускорение темпов научно-технического прогресса </span></TD> 
+<TD>	c-<select type="select" id="g2r3" name="g2" onchange="asd(2)"><option selected>...<option>1<option value="2">2<option>3<option>4</select><span id="g2l3" class="off" >Правильный ответ: 2</span><br/></TD></TR>
+
+<TR><TD><span id="r4g2" value="1">d) Интернационализация высшего образования</span></TD> 
+<TD>	d-<select type="select" id="g2r4" name="g2" onchange="asd(2)"><option selected>...<option value="1">1<option>2<option>3<option>4</select><span id="g2l4" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<TABLE BORDER=0>
+<TR><TD>1) Создание единого образовательного пространства, способствующего повышению профессиональной мобильности и конкурентоспособности выпускников </TR></TD>
+<TR><TD>2) Интеграция образования, науки и производства </TR></TD>
+<TR><TD>3) Формирование у обучающихся планетарного мышления, гражданской ответственности, способности жить в поликультурном мире</TR></TD>
+<TR><TD>4) Развитие дистанционного образования</TR></TD>
+</TABLE>
+<br/>
+<br/>
+5. Педагогический процесс в универсальной модели образования главным образом направлен на
+<br><input type="checkbox" id="f3r1" name="f3" value="0"><span id="r1f3">a) одностороннюю передачу педагогами и усвоение обучающимися «готовой» информации</span><br/>
+<input type="checkbox" id="f3r2" name="f3" value="1"><span id="r2f3">b) развитие способностей учащихся добывать знания и применять их в новых условиях</span><br/>
+<br/>
+<br/>
+6. Укажите характеристики, которые определяют инновационную (компетентностную) модель образования
+<br><input type="checkbox" id="f4r1" name="f4" value="0"><span id="r1f4">a) преобладание объяснительно-иллюстративных и репродуктивных методов обучения</span><br/>
+<input type="checkbox" id="f4r2" name="f4" value="1"><span id="r2f4">b) усиление практико-ориентированного, междисциплинарного, прикладного аспектов содержания обучения</span><br/>
+<input type="checkbox" id="f4r3" name="f4" value="1"><span id="r3f4">c) преобладание ценностно-смысловых и деятельностных знаний</span><br/>
+<input type="checkbox" id="f4r4" name="f4" value="1"><span id="r4f4">d) овладение системой знаний, умений, навыков; опытом применения полученных знаний в различных ситуациях, формирование компетенций</span><br/>
+<input type="checkbox" id="f4r5" name="f4" value="0"><span id="r5f4">e)	освоение системы ЗУНов как алгоритма деятельности в типичных жизненных или профессиональных ситуациях</span><br/>
+<input type="checkbox" id="f4r6" name="f4" value="0"><span id="r6f4">f)	сокращение доли самостоятельной учебной и исследовательской работы студентов</span><br/>
+<input type="checkbox" id="f4r7" name="f4" value="0"><span id="r7f4">g)	преобладание в учебном процессе функций контроля и оценки преподавателя над функциями самоконтроля и самооценки обучающихся</span><br/>
+<br/>
+<br/>
+7. Для каких целей функционирует система дополнительного образования Республики Беларусь
+<br><input type="checkbox" id="f5r1" name="f5" value="1"><span id="r1f5">a) расширение возможностей личности в интеллектуальном, эстетическом, физическом развитии</span><br/>
+<input type="checkbox" id="f5r2" name="f5" value="0"><span id="r2f5">b)	получение второго высшего образования</span><br/>
+<input type="checkbox" id="f5r3" name="f5" value="1"><span id="r3f5">c)	углубление профессиональной компетенции</span><br/>
+<input type="checkbox" id="f5r4" name="f5" value="0"><span id="r4f5">d)	обеспечение возможностей обучения детей с особенностями психофизического развития</span><br/>   
+<input type="checkbox" id="f5r5" name="f5" value="1"><span id="r5f5">e)	кадровое обеспечение сфер социально-экономической деятельности</span><br/>
+<br/>
+<br/>
+8. Для  каких групп населения предназначено специальное образование
+<br><input type="checkbox" id="f6r1" name="f6" value="1"><span id="r1f6">a) школьников, имеющих психофизические особенности</span><br/>
+<input type="checkbox" id="f6r2" name="f6" value="1"><span id="r2f6">b)	дошкольников, имеющих психофизические особенности</span><br/>
+<input type="checkbox" id="f6r3" name="f6" value="0"><span id="r3f6">c)	одаренных детей  и подростков</span><br/>
+<input type="checkbox" id="f6r4" name="f6" value="0"><span id="r4f6">d)	людей с асоциальным поведением</span><br/>
+<br/>
+<br/>
+9. Установите соответствие между уровнями  образования и учреждениями, обеспечивающими его  получение
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g3" value="3">a) Общее среднее</span></TD>            
+<TD>	a-<select type="select" id="g3r1" name="g3" onchange="asd(3)"><option  
+selected>...<option>1<option>2<option value="3">3<option>4<option>5<option>6</select><span id="g3l1" class="off" >Правильный  
+ответ: 3</span><br/></TD></TR>
+
+<TR><TD><span id="r2g3" value="5">b) Профессионально-техническое </span></TD>
+<TD>	b-<select type="select" id="g3r2" name="g3" onchange="asd(3)"><option selected>...<option>1<option>2<option>3<option>4<option value="5">5<option>6</select><span id="g3l2" class="off" >Правильный ответ: 5</span><br/></TD></TR>
+
+<TR><TD><span id="r3g3" value="1">c) Дошкольное</span></TD> 
+<TD>	c-<select type="select" id="g3r3" name="g3" onchange="asd(3)"><option selected>...<option value="1">1<option>2<option>3<option>4<option>5<option>6</select><span id="g3l3" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+
+<TR><TD><span id="r4g3" value="6">d) Среднее специальное</span></TD> 
+<TD>	d-<select type="select" id="g3r4" name="g3" onchange="asd(3)"><option selected>...<option>1<option>2<option>3<option>4<option>5<option value="6">6</select><span id="g3l4" class="off" >Правильный ответ: 6</span><br/></TD></TR>
+
+<TR><TD><span id="r5g3" value="2">e) Послевузовское</span></TD> 
+<TD>	e-<select type="select" id="g3r5" name="g3" onchange="asd(3)"><option  
+selected>...<option>1<option value="2">2<option>3<option>4<option>5<option>6</select><span id="g3l5" class="off" >Правильный  
+ответ: 2</span><br/></TD></TR>
+
+<TR><TD><span id="r6g3" value="4">f) Высшее</span></TD> 
+<TD>	f-<select type="select" id="g3r6" name="g3" onchange="asd(3)"><option  
+selected>...<option>1<option>2<option>3<option value="4">4<option>5<option>6</select><span id="g3l6" class="off" >Правильный  
+ответ: 4</span><br/></TD></TR>
+</TABLE>
+<br/>
+<TABLE BORDER=0>
+<TR><TD>1) Дошкольный центр развития ребенка</TR></TD>
+<TR><TD>2) Магистратура</TR></TD>
+<TR><TD>3) Гимназия</TR></TD>
+<TR><TD>4) Академия</TR></TD>
+<TR><TD>5) Профессионально-техническое училище</TR></TD>
+<TR><TD>6) Колледж</TR></TD>
+</TABLE>
+<br/>
+<br/>
+10. Укажите верные утверждения. Развитие личности
+<br><input type="checkbox" id="f7r1" name="f7" value="1"><span id="r1f7">a) продолжается на протяжении всей жизни человека</span><br/>
+<input type="checkbox" id="f7r2" name="f7" value="0"><span id="r2f7">b)	завершается в определенный период, когда человек становится взрослым (зрелым)</span><br/>
+<input type="checkbox" id="f7r3" name="f7" value="0"><span id="r3f7">c)	представляет собой только количественные изменения, происходящие в различных сферах личности человека</span><br/>
+<input type="checkbox" id="f7r4" name="f7" value="1"><span id="r4f7">d)	включает периоды качественных скачков , которые сменяются постепенным накоплением количественных изменений</span><br/>   
+<input type="checkbox" id="f7r5" name="f7" value="1"><span id="r5f7">e)	обеспечивает невозможность отхода назад на прежний уровень развития (или деградации) по всем без исключения показателям</span><br/>
+<input type="checkbox" id="f7r6" name="f7" value="1"><span id="r6f7">f)	включает в себя прогресс и регресс</span><br/>
+<input type="checkbox" id="f7r7" name="f7" value="1"><span id="r7f7">g)	осуществляется в единстве с тенденцией к устойчивости, сохранению достигнутого и воспроизведению сложившихся типов функционирования</span><br/>
+<input type="checkbox" id="f7r8" name="f7" value="0"><span id="r8f7">h)	исключает тенденцию к сохранению старого</span><br/>
+<br/>
+<br/>
+11. Личность существует и развивается
+<br><input type="checkbox" id="f8r1" name="f8" value="0"><span id="r1f8">a) независимо от внешних факторов и условий среды</span><br/>
+<input type="checkbox" id="f8r2" name="f8" value="0"><span id="r2f8">b)	под действием генетических факторов, путем вызревания врожденных задатков</span><br/>
+<input type="checkbox" id="f8r3" name="f8" value="1"><span id="r3f8">c)	в деятельности и общении</span><br/>
+<br/>
+<br/>
+12. Укажите позицию современной педагогики и психологии в вопросе о соотношении обучения и развития
+<br><input type="checkbox" id="f9r1" name="f9" value="0"><span id="r1f9">a) Любое обучение является развивающим, поскольку приводит к развитию у обучающихся ценных умственных действий (привычек). Обучение и есть развитие</span><br/>
+<input type="checkbox" id="f9r2" name="f9" value="0"><span id="r2f9">b)	Развитие должно совершить определенные законченные циклы в становлении личности ребенка, определенные функции должны созреть прежде, чем школа может приступить к обучению. Циклы развития всегда предшествуют циклам обучения</span><br/>
+<input type="checkbox" id="f9r3" name="f9" value="1"><span id="r3f9">c)	Обучение может идти не только вслед или рядом с процессом развития, но и впереди развития, продвигая его дальше и вызывая в личности новообразования</span><br/>
+<br/>
+<br/>
+13. Выберите правильный порядок реализации структурных элементов учебной деятельности
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g4" value="3">a) учебные действия</span></TD>            
+<TD>	a-<select type="select" id="g4r1" name="g4" onchange="asd(4)"><option selected>...<option>1<option>2<option value="3">3<option>4<option>5</select><span id="g4l1" class="off" >Правильный ответ: 3</span><br/></TD></TR>
+
+<TR><TD><span id="r2g4" value="5">b) оценка, переходящая в самооценку</span></TD>
+<TD>	b-<select type="select" id="g4r2" name="g4" onchange="asd(4)"><option selected>...<option>1<option>2<option>3<option>4<option value="5">5</select><span id="g4l2" class="off" >Правильный ответ: 5</span><br/></TD></TR>
+
+<TR><TD><span id="r3g4" value="2">c) учебные задачи</span></TD> 
+<TD>	c-<select type="select" id="g4r3" name="g4" onchange="asd(4)"><option selected>...<option>1<option value="2">2<option>3<option>4<option >5</select><span id="g4l3" class="off" >Правильный ответ: 2</span><br/></TD></TR>
+
+<TR><TD><span id="r4g4" value="1">d) мотивация</span></TD> 
+<TD>	d-<select type="select" id="g4r4" name="g4" onchange="asd(4)"><option selected>...<option value="1">1<option>2<option>3<option>4<option>5</select><span id="g4l4" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+
+<TR><TD><span id="r5g4" value="4">e) контроль, переходящий в самоконтроль</span></TD> 
+<TD>	e-<select type="select" id="g4r5" name="g4" onchange="asd(4)"><option selected>...<option>1<option>2<option>3<option value="4">4<option>5</select><span id="g4l5" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<br/>
+14. Основная цель воспитательного процесса – ориентировать школьников на
+<br><input type="checkbox" id="f10r1" name="f10" value="0"><span id="r1f10">a) подчинение требованиям учителя</span><br/>
+<input type="checkbox" id="f10r2" name="f10" value="1"><span id="r2f10">b) самовоспитание</span><br/>
+<input type="checkbox" id="f10r3" name="f10" value="0"><span id="r3f10">c) соблюдение дисциплины</span><br/>
+<input type="checkbox" id="f10r4" name="f10" value="0"><span id="r4f10">d) подражание</span><br/>
+<br/>
+<br/>
+15. Восстановите последовательность этапов самовоспитания
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g5" value="5">a) рефлексия</span></TD>            
+<TD>	a-<select type="select" id="g5r1" name="g5" onchange="asd(5)"><option selected>...<option>1<option >2<option>3<option >4<option value="5">5</select><span id="g5l1" class="off" >Правильный ответ: 5</span><br/></TD></TR>
+
+<TR><TD><span id="r2g5" value="4">b) выполнение плана</span></TD>
+<TD>	b-<select type="select" id="g5r2" name="g5" onchange="asd(5)"><option selected>...<option>1<option>2<option>3<option value="4">4<option>5</select><span id="g5l2" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+
+<TR><TD><span id="r3g5" value="2">c) определение идеала</span></TD> 
+<TD>	c-<select type="select" id="g5r3" name="g5" onchange="asd(5)"><option selected>...<option>1<option value="2">2<option>3<option>4<option >5</select><span id="g5l3" class="off" >Правильный ответ: 2</span><br/></TD></TR>
+
+<TR><TD><span id="r4g5" value="3">d) самообязательство</span></TD> 
+<TD>	d-<select type="select" id="g5r4" name="g5" onchange="asd(5)"><option selected>...<option>1<option>2<option value="3">3<option>4<option>5</select><span id="g5l4" class="off" >Правильный ответ: 3</span><br/></TD></TR>
+
+<TR><TD><span id="r5g5" value="1">e) самоизучение</span></TD> 
+<TD>	e-<select type="select" id="g5r5" name="g5" onchange="asd(5)"><option selected>...<option value="1">1<option>2<option>3<option>4<option>5</select><span id="g5l5" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<br/>
+16. Укажите общие правила эффективного общения
+<br><input type="checkbox" id="f11r1" name="f11" value="1"><span id="r1f11">a) научитесь слушать собеседника</span><br/>
+<input type="checkbox" id="f11r2" name="f11" value="1"><span id="r2f11">b) проявляйте заинтересованность к собеседнику и предмету разговора</span><br/>
+<input type="checkbox" id="f11r3" name="f11" value="0"><span id="r3f11">c) неукоснительно следуйте своей точке зрения</span><br/>
+<input type="checkbox" id="f11r4" name="f11" value="0"><span id="r4f11">d) не давайте возможность собеседнику задавать вам вопросы</span><br/>
+<input type="checkbox" id="f11r5" name="f11" value="1"><span id="r5f11">e) обращайте внимание на «язык тела»</span><br/>
+<input type="checkbox" id="f11r6" name="f11" value="0"><span id="r6f11">f) будьте хорошим «экскурсоводом»</span><br/>
+<input type="checkbox" id="f11r7" name="f11" value="0"><span id="r7f11">g) торопитесь, демонстрируйте свою деловитость и занятость</span><br/>
+<input type="checkbox" id="f11r8" name="f11" value="0"><span id="r8f11">h) будьте более эмоциональны, чем спокойны</span><br/>
+<input type="checkbox" id="f11r9" name="f11" value="1"><span id="r9f11">i) непрерывно поддерживайте контакт с собеседником</span><br/>
+<br/>
+<br/>
+17. Установите соответствие между функциями игры и их характеристиками
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g6" value="4">a) воспитывающая</span></TD>            
+<TD>	a-<select type="select" id="g6r1" name="g6" onchange="asd(6)"><option selected>...<option>1<option>2<option>3<option value="4">4<option>5<option>6</select><span id="g6l1" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+
+<TR><TD><span id="r2g6" value="1">b) социальная</span></TD>
+<TD>	b-<select type="select" id="g6r2" name="g6" onchange="asd(6)"><option selected>...<option value="1">1<option>2<option>3<option>4<option>5<option>6</select><span id="g6l2" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+
+<TR><TD><span id="r3g6" value="5">c) творческая</span></TD> 
+<TD>	c-<select type="select" id="g6r3" name="g6" onchange="asd(6)"><option selected>...<option>1<option>2<option>3<option>4<option value="5">5<option>6</select><span id="g6l3" class="off" >Правильный ответ: 5</span><br/></TD></TR>
+
+<TR><TD><span id="r4g6" value="6">d) гедонистическая</span></TD> 
+<TD>	d-<select type="select" id="g6r4" name="g6" onchange="asd(6)"><option selected>...<option>1<option>2<option>3<option>4<option>5<option value="6">6</select><span id="g6l4" class="off" >Правильный ответ: 6</span><br/></TD></TR>
+
+<TR><TD><span id="r5g6" value="3">e) обучающая</span></TD> 
+<TD>	e-<select type="select" id="g6r5" name="g6" onchange="asd(6)"><option selected>...<option>1<option>2<option value="3">3<option>4<option>5<option>6</select><span id="g6l5" class="off" >Правильный ответ: 3</span><br/></TD></TR>
+
+<TR><TD><span id="r6g6" value="2">f) коммуникативная</span></TD> 
+<TD>	f-<select type="select" id="g6r6" name="g6" onchange="asd(6)"><option selected>...<option>1<option value="2">2<option>3<option>4<option>5<option>6</select><span id="g6l6" class="off" >Правильный ответ: 2</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<TABLE BORDER=0>
+<TR><TD>1) моделирует жизненные ситуации</TR></TD>
+<TR><TD>2) создает условия для взаимодействия и взаимопомощи</TR></TD>
+<TR><TD>3) обучает новым знаниям и опыту</TR></TD>
+<TR><TD>4) сплачивает участников</TR></TD>
+<TR><TD>5) создает простор для фантазии</TR></TD>
+<TR><TD>6) удовлетворяет потребность человека в наслаждении и радости</TR></TD>
+</TABLE>
+<br/>
+<br/>
+18. Расположите в порядке возрастания силы воздействия на человека факторы социализации
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g7" value="2">a) Макрофакторы</span></TD>            
+<TD>	a-<select type="select" id="g7r1" name="g7" onchange="asd(7)"><option selected>...<option>1<option value="2">2<option>3<option>4</select><span id="g7l1" class="off" >Правильный ответ: 2</span><br/></TD></TR>
+
+<TR><TD><span id="r2g7" value="3">b) Мезафакторы</span></TD>
+<TD>	b-<select type="select" id="g7r2" name="g7" onchange="asd(7)"><option selected>...<option>1<option>2<option value="3">3<option>4</select><span id="g7l2" class="off" >Правильный ответ: 3</span><br/></TD></TR>
+
+<TR><TD><span id="r3g7" value="4">c) Микрофакторы</span></TD> 
+<TD>	c-<select type="select" id="g7r3" name="g7" onchange="asd(7)"><option selected>...<option>1<option>2<option>3<option value="4">4</select><span id="g7l3" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+
+<TR><TD><span id="r4g7" value="1">d) Мегафакторы</span></TD> 
+<TD>	d-<select type="select" id="g7r4" name="g7" onchange="asd(7)"><option selected>...<option value="1">1<option>2<option>3<option>4</select><span id="g7l4" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<br/>
+19. Укажите внутренние факторы, влияющие на семейное воспитание
+<br><input type="checkbox" id="f12r1" name="f12" value="0"><span id="r1f12">a) естественная убыль населения</span><br/>
+<input type="checkbox" id="f12r2" name="f12" value="1"><span id="r2f12">b) духовное единство семьи</span><br/>
+<input type="checkbox" id="f12r3" name="f12" value="1"><span id="r3f12">c) уровень педагогической культуры родителей</span><br/>
+<input type="checkbox" id="f12r4" name="f12" value="1"><span id="r4f12">d) жилищные и материально-бытовые условия  семьи</span><br/>
+<input type="checkbox" id="f12r5" name="f12" value="0"><span id="r5f12">e) воздействие политических, социально-экономических и экологических условий</span><br/>
+<input type="checkbox" id="f12r6" name="f12" value="1"><span id="r6f12">f) семейные традиции, обычаи и обряды</span><br/>
+<input type="checkbox" id="f12r7" name="f12" value="1"><span id="r7f12">g) структура семьи и ее количественный состав</span><br/>
+<input type="checkbox" id="f12r8" name="f12" value="0"><span id="r8f12">h) большое количество разводов</span><br/>
+<input type="checkbox" id="f12r9" name="f12" value="0"><span id="r9f12">i) ухудшение репродуктивного здоровья населения</span><br/>
+<input type="checkbox" id="f12r10" name="f12" value="1"><span id="r10f12">j) авторитет родителей</span><br/>
+<input type="checkbox" id="f12r11" name="f12" value="0"><span id="r11f12">k) кризис воспитания</span><br/>
+<input type="checkbox" id="f12r12" name="f12" value="1"><span id="r12f12">l) выполнение родителями функций материнства и отцовства</span><br/>
+<input type="checkbox" id="f12r13" name="f12" value="1"><span id="r13f12">m) характер трудовой деятельности членов семьи, атмосфера трудолюбия</span><br/>
+<br/>
+<br/>
+20. Укажите основные принципы семейного воспитания
+<br><input type="checkbox" id="f13r1" name="f13" value="0"><span id="r1f13">a) не морализировать</span><br/>
+<input type="checkbox" id="f13r2" name="f13" value="0"><span id="r2f13">b) запрещение читать чужие письма и дневники</span><br/>
+<input type="checkbox" id="f13r3" name="f13" value="1"><span id="r3f13">c) гуманность и милосердие к ребенку</span><br/>
+<input type="checkbox" id="f13r4" name="f13" value="0"><span id="r4f13">d) не говорить слишком много</span><br/>
+<input type="checkbox" id="f13r5" name="f13" value="1"><span id="r5f13">e) вовлечение детей в жизнедеятельность семьи как ее равноправных участников</span><br/>
+<input type="checkbox" id="f13r6" name="f13" value="1"><span id="r6f13">f) открытость и доверительность отношений с детьми</span><br/>
+<input type="checkbox" id="f13r7" name="f13" value="1"><span id="r7f13">g) оптимистичность взаимоотношений в семье</span><br/>
+<input type="checkbox" id="f13r8" name="f13" value="1"><span id="r8f13">h) последовательность и согласованность родителей в своих требованиях</span><br/>
+<input type="checkbox" id="f13r9" name="f13" value="0"><span id="r9f13">i) запрещение физических наказаний</span><br/>
+<input type="checkbox" id="f13r10" name="f13" value="0"><span id="r10f13">j) не требовать немедленного повиновения</span><br/>
+<input type="checkbox" id="f13r11" name="f13" value="1"><span id="r11f13">k) оказание помощи ребенку, готовность отвечать на его вопросы</span><br/>
+<input type="checkbox" id="f13r12" name="f13" value="1"><span id="r12f13">l) социальная направленность (нельзя воспитывать ребенка, не погружая его в реальные проблемы жизни)</span><br/>
+<input type="checkbox" id="f13r13" name="f13" value="0"><span id="r13f13">m) не потакать</span><br/>
+<br/>
+<br/>
+21. Выделите функции семьи
+<br><input type="checkbox" id="f14r1" name="f14" value="0"><span id="r1f14">a) аналитическая</span><br/>
+<input type="checkbox" id="f14r2" name="f14" value="1"><span id="r2f14">b) репродуктивная</span><br/>
+<input type="checkbox" id="f14r3" name="f14" value="0"><span id="r3f14">c) проективная</span><br/>
+<input type="checkbox" id="f14r4" name="f14" value="0"><span id="r4f14">d) диагностическая</span><br/>
+<input type="checkbox" id="f14r5" name="f14" value="1"><span id="r5f14">e) экономическая</span><br/>
+<input type="checkbox" id="f14r6" name="f14" value="0"><span id="r6f14">f) целеполагания</span><br/>
+<input type="checkbox" id="f14r7" name="f14" value="0"><span id="r7f14">g) дифференциации</span><br/>
+<input type="checkbox" id="f14r8" name="f14" value="1"><span id="r8f14">h) воспитательная</span><br/>
+<input type="checkbox" id="f14r9" name="f14" value="1"><span id="r9f14">i) хозяйственно-бытовая</span><br/>
+<input type="checkbox" id="f14r10" name="f14" value="0"><span id="r10f14">j) планирования</span><br/>
+<input type="checkbox" id="f14r11" name="f14" value="1"><span id="r11f14">k) первичной социализации</span><br/>
+<input type="checkbox" id="f14r12" name="f14" value="0"><span id="r12f14">l) оценочная</span><br/>
+<input type="checkbox" id="f14r13" name="f14" value="0"><span id="r13f14">m) управления</span><br/>
+<input type="checkbox" id="f14r14" name="f14" value="0"><span id="r14f14">n) организаторская</span><br/>
+<input type="checkbox" id="f14r15" name="f14" value="1"><span id="r15f14">o) рекреационная</span><br/>
+<input type="checkbox" id="f14r16" name="f14" value="0"><span id="r16f14">p) контрольная</span><br/>
+<input type="checkbox" id="f14r17" name="f14" value="0"><span id="r17f14">q) систематизации</span><br/>
+<input type="checkbox" id="f14r18" name="f14" value="0"><span id="r18f14">r) наказания</span><br/>
+<input type="checkbox" id="f14r19" name="f14" value="1"><span id="r19f14">s) психотерапевтическая</span><br/>
+<br/>
+<br/>
+22. Какие из видов карьеры можно условно назвать «успешными»
+<br/><input type="checkbox" id="f15r1" name="f15" value="0"><span id="r1f15">a) кратковременная</span><br/>
+<input type="checkbox" id="f15r2" name="f15" value="1"><span id="r2f15">b) линейная</span><br/>
+<input type="checkbox" id="f15r3" name="f15" value="1"><span id="r3f15">c) стабильная</span><br/>
+<input type="checkbox" id="f15r4" name="f15" value="1"><span id="r4f15">d) платообразная</span><br/>
+<input type="checkbox" id="f15r5" name="f15" value="0"><span id="r5f15">e) снижающаяся</span><br/>
+<input type="checkbox" id="f15r6" name="f15" value="1"><span id="r6f15">f) спиральная</span><br/>
+<br/>
+<br/>
+23. К творческой деятельности относят
+<br><input type="checkbox" id="f16r1" name="f16" value="1"><span id="r1f16">a) создание произведений искусств</span><br/>
+<input type="checkbox" id="f16r2" name="f16" value="1"><span id="r2f16">b)	научную деятельность</span><br/>
+<input type="checkbox" id="f16r3" name="f16" value="0"><span id="r3f16">c)	любую деятельность, продукт которой полезен для общества</span><br/>
+<input type="checkbox" id="f16r4" name="f16" value="1"><span id="r4f16">d)	деятельность, продуктом которой является нечто новое, оригинальное, ранее не существовавшее</span><br/>   
+<input type="checkbox" id="f16r5" name="f16" value="0"><span id="r5f16">e)	деятельность по сложному алгоритму</span><br/>
+<input type="checkbox" id="f16r6" name="f16" value="0"><span id="r6f16">f)	новый результат, полученный методом перебора</span><br/>
+<br/>
+<br/>
+24. Установите правильный порядок протекания творческого процесса согласно гипотезе инсайта
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g8" value="1">a) фаза собирания материала</span></TD>            
+<TD>	a-<select type="select" id="g8r1" name="g8" onchange="asd(8)"><option selected>...<option value="1">1<option>2<option>3<option>4<option>5</select><span id="g8l1" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+
+<TR><TD><span id="r2g8" value="4">b) фаза инсайта, озарения, когда решение  неожиданно и целиком  появляется в сознании</span></TD>
+<TD>	b-<select type="select" id="g8r2" name="g8" onchange="asd(8)"><option selected>...<option>1<option>2<option>3<option value="4">4<option>5</select><span id="g8l2" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+
+<TR><TD><span id="r3g8" value="3">c) фаза созревания, или инкубации, когда работает в основном подсознание, а на уровне сознательно регулируемых действий человек может заниматься другим делом</span></TD> 
+<TD>	c-<select type="select" id="g8r3" name="g8" onchange="asd(8)"><option selected>...<option>1<option>2<option value="3">3<option>4<option>5</select><span id="g8l3" class="off" >Правильный ответ: 3</span><br/></TD></TR>
+
+<TR><TD><span id="r4g8" value="5">d) фаза  контроля или проверки, которая требует полной включенности сознания</span></TD> 
+<TD>	d-<select type="select" id="g8r4" name="g8" onchange="asd(8)"><option selected>...<option>1<option>2<option>3<option>4<option value="5">5</select><span id="g8l4" class="off" >Правильный ответ: 5</span><br/></TD></TR>
+
+<TR><TD><span id="r5g8" value="2">e) фаза накопления знаний</span></TD> 
+<TD>	e-<select type="select" id="g8r5" name="g8" onchange="asd(8)"><option selected>...<option>1<option value="2">2<option>3<option>4<option>5</select><span id="g8l5" class="off" >Правильный ответ: 2</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<br/>
+25. Укажите факторы, позитивно влияющие на процесс творчества
+<br><input type="checkbox" id="f17r1" name="f17" value="0"><span id="r1f17">a) лимит времени</span><br/>
+<input type="checkbox" id="f17r2" name="f17" value="1"><span id="r2f17">b) ситуация успеха</span><br/>
+<input type="checkbox" id="f17r3" name="f17" value="0"><span id="r3f17">c) состояние стресса</span><br/>
+<input type="checkbox" id="f17r4" name="f17" value="1"><span id="r4f17">d) любознательность</span><br/>
+<input type="checkbox" id="f17r5" name="f17" value="1"><span id="r5f17">e) уверенность в своих силах</span><br/>
+<input type="checkbox" id="f17r6" name="f17" value="0"><span id="r6f17">f) состояние повышенной тревожности</span><br/>
+<input type="checkbox" id="f17r7" name="f17" value="1"><span id="r7f17">g) наличие внутренней мотивации к деятельности</span><br/>
+<input type="checkbox" id="f17r8" name="f17" value="0"><span id="r8f17">h) наличие фиксированной установки на конкретный способ решения</span><br/>
+<input type="checkbox" id="f17r9" name="f17" value="1"><span id="r9f17">i) широкий кругозор</span><br/>
+<input type="checkbox" id="f17r10" name="f17" value="0"><span id="r10f17">j) узкая профессиональная специализация</span><br/>
+<br/>
+<br/>
+
+<br />
+<input class="Submit" type="button" value="Ответить" onclick="finish()"/>
+<div id="result"></div>
+<input class="Submit" type="button" value="Начать тест заново" onclick="javascript:window.location.reload()"/>
+</form>
+</td></tr></table>
+
+</body>
+</html>

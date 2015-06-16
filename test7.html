@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <title>&#207;&#240;&#238;&#236;&#229;&#230;&#243;&#242;&#238;&#247;&#237;&#251;&#233; &#242;&#229;&#241;&#242;</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<style type="text/css">
+.off {display:none}
+.on {display: inline-block; color: blue;}
+</style>
+
+  <script language="javascript">
+    
+	
+	function start()
+	{
+          var totalcount = 0;
+          var itm = document.getElementById("g1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	totalcount++;
+                var ans = 0;
+		var citem=document.getElementById("g"+totalcount+"r1");
+		while (citem!=undefined)
+		{
+			ans++;
+			citem.selectedIndex= 0;
+			var cspan = document.getElementById("r"+ans+"g"+totalcount);
+			cspan.style.color="black";
+			
+			citem = document.getElementById("g"+totalcount+"r"+(ans+1));
+		}
+		itm = document.getElementById("g"+(totalcount+1)+"r1"); 
+	  }
+
+
+
+          var totalcount = 0;
+          var itm = document.getElementById("f1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	totalcount++;
+                var ans = 0;
+		var citem=document.getElementById("f"+totalcount+"r1");
+		while (citem!=undefined)
+		{
+			ans++;
+			citem.checked = false;
+			var cspan = document.getElementById("r"+ans+"f"+totalcount);
+			cspan.style.color="black";
+			
+			citem = document.getElementById("f"+totalcount+"r"+(ans+1));
+		}
+		itm = document.getElementById("f"+(totalcount+1)+"r1"); 
+	  }
+
+
+	  document.getElementById("result").innerHTML = "";
+	}
+	
+
+
+
+
+
+	function finish()
+	{
+	var cor=0;
+		
+          var j = 0;
+          var itm = document.getElementById("g1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	j++;
+		
+		var ans = 0;
+		var citem=document.getElementById("g"+j+"r1");
+		var ck = 0;
+		while (citem!=undefined)
+		{
+			ans++;
+			var cspan = document.getElementById("r"+ans+"g"+j);
+			if (citem.value == cspan.value) {
+				cspan.style.color = "blue";
+				ck++;
+			}
+			else {
+				document.getElementById("g"+j+"l"+ans).className = "on";
+				cspan.style.color = "red";
+			}
+
+			
+			citem = document.getElementById("g"+j+"r"+(ans+1));
+
+		}
+		if (ck == ans){
+			cor++;
+		}
+        itm = document.getElementById("g"+(j+1)+"r1"); 
+	}
+
+
+
+
+	var pr=j;
+	
+          var j = 0;
+          var itm = document.getElementById("f1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	j++;
+		
+		var ans = 0;
+		var citem=document.getElementById("f"+j+"r1");
+		var ck = 0;
+		while (citem!=undefined)
+		{
+			ans++;
+			var cspan = document.getElementById("r"+ans+"f"+j);
+			if (citem.checked == true && citem.value == "1") {
+				cspan.style.color = "blue";
+			}
+			if (citem.checked == true && citem.value == "0") {
+				ck++;
+				cspan.style.color = "red";
+			}
+			if (citem.checked == false && citem.value == "0") {
+				cspan.style.color = "black";
+			}
+			if (citem.checked == false && citem.value == "1") {
+				ck++;
+				cspan.style.color = "blue";
+			}
+			
+			citem = document.getElementById("f"+j+"r"+(ans+1));
+		}
+		if (ck == 0){
+			cor++;
+		}
+        itm = document.getElementById("f"+(j+1)+"r1"); 
+	}
+	  pr=pr+j;
+	  document.getElementById("result").innerHTML = "Количество правильных ответов: "+cor+" из "+pr+" ("+Math.round(cor*100/pr)+"%)";
+
+
+
+
+
+	}
+	
+	
+	function asd(gg){
+	  var mm=new Array();
+	  var pos=0;
+	  
+	  var tr=document.getElementsByName('g'+gg);
+      for(k=0;k<tr.length;k++) 
+        if(tr[k].selectedIndex>0) {mm[pos]=tr[k].selectedIndex; pos++;}
+
+
+
+      for(k=0;k<tr.length;k++){ 
+            for(i=0;i<tr[k].options.length;i++) tr[k].options[i].disabled=false;
+            for(i=0;i<pos;i++) tr[k].options[mm[i]].disabled=true;
+        }
+	   
+	}
+	
+  </script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="start()">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Промежуточный тест</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="umk_osnovy_pedagogiki.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<form>
+1. К творческой деятельности относят
+<br><input type="checkbox" id="f1r1" name="f1" value="1"><span id="r1f1">a) создание произведений искусств</span><br/>
+<input type="checkbox" id="f1r2" name="f1" value="1"><span id="r2f1">b)	научную деятельность</span><br/>
+<input type="checkbox" id="f1r3" name="f1" value="0"><span id="r3f1">c)	любую деятельность, продукт которой полезен для общества</span><br/>
+<input type="checkbox" id="f1r4" name="f1" value="1"><span id="r4f1">d)	деятельность, продуктом которой является нечто новое, оригинальное, ранее не существовавшее</span><br/>   
+<input type="checkbox" id="f1r5" name="f1" value="0"><span id="r5f1">e)	деятельность по сложному алгоритму</span><br/>
+<input type="checkbox" id="f1r6" name="f1" value="0"><span id="r6f1">f)	новый результат, полученный методом перебора</span><br/>
+<br/>
+<br/>
+2. Субъективное творчество в учебной деятельности учащихся проявляется в становлении таких личностных новообразований, как
+<br><input type="checkbox" id="f2r1" name="f2" value="1"><span id="r1f2">a) готовность к поиску новой информации</span><br/>
+<input type="checkbox" id="f2r2" name="f2" value="0"><span id="r2f2">b)	неуверенность в себе</span><br/>
+<input type="checkbox" id="f2r3" name="f2" value="1"><span id="r3f2">c)	порождение новых мотивов и целей деятельности</span><br/>
+<input type="checkbox" id="f2r4" name="f2" value="1"><span id="r4f2">d)	рефлексивность</span><br/>
+<input type="checkbox" id="f2r5" name="f2" value="1"><span id="r5f2">e)	коммуникативность</span><br/>
+<input type="checkbox" id="f2r6" name="f2" value="1"><span id="r6f2">f)	овладение новыми способами деятельности</span><br/>
+<input type="checkbox" id="f2r7" name="f2" value="0"><span id="r7f2">g)	неадекватная самооценка</span><br/>
+<input type="checkbox" id="f2r8" name="f2" value="1"><span id="r8f2">h)	креативность</span><br/>
+<input type="checkbox" id="f2r9" name="f2" value="1"><span id="r9f2">i)	усиление интеллектуальной активности</span><br/>
+<input type="checkbox" id="f2r10" name="f2" value="0"><span id="r10f2">j) ориентация на решение задач по образцу
+</span><br/>   
+<br/>
+<br/>
+3. Установите правильный порядок протекания творческого процесса согласно гипотезе инсайта
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g1" value="1">a) фаза собирания материала</span></TD>            
+<TD>	a-<select type="select" id="g1r1" name="g1" onchange="asd(1)"><option selected>...<option value="1">1<option>2<option>3<option>4<option>5</select><span id="g1l1" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+
+<TR><TD><span id="r2g1" value="4">b) фаза инсайта, озарения, когда решение  неожиданно и целиком  появляется в сознании</span></TD>
+<TD>	b-<select type="select" id="g1r2" name="g1" onchange="asd(1)"><option selected>...<option>1<option>2<option>3<option value="4">4<option>5</select><span id="g1l2" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+
+<TR><TD><span id="r3g1" value="3">c) фаза созревания, или инкубации, когда работает в основном подсознание, а на уровне сознательно регулируемых действий человек может заниматься другим делом</span></TD> 
+<TD>	c-<select type="select" id="g1r3" name="g1" onchange="asd(1)"><option selected>...<option>1<option>2<option value="3">3<option>4<option>5</select><span id="g1l3" class="off" >Правильный ответ: 3</span><br/></TD></TR>
+
+<TR><TD><span id="r4g1" value="5">d) фаза  контроля или проверки, которая требует полной включенности сознания</span></TD> 
+<TD>	d-<select type="select" id="g1r4" name="g1" onchange="asd(1)"><option selected>...<option>1<option>2<option>3<option>4<option value="5">5</select><span id="g1l4" class="off" >Правильный ответ: 5</span><br/></TD></TR>
+
+<TR><TD><span id="r5g1" value="2">e) фаза накопления знаний</span></TD> 
+<TD>	e-<select type="select" id="g1r5" name="g1" onchange="asd(1)"><option selected>...<option>1<option value="2">2<option>3<option>4<option>5</select><span id="g1l5" class="off" >Правильный ответ: 2</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<br/>
+4. Укажите факторы, позитивно влияющие на процесс творчества
+<br><input type="checkbox" id="f3r1" name="f3" value="0"><span id="r1f3">a) лимит времени</span><br/>
+<input type="checkbox" id="f3r2" name="f3" value="1"><span id="r2f3">b)	ситуация успеха</span><br/>
+<input type="checkbox" id="f3r3" name="f3" value="0"><span id="r3f3">c)	состояние стресса</span><br/>
+<input type="checkbox" id="f3r4" name="f3" value="1"><span id="r4f3">d) любознательность</span><br/>
+<input type="checkbox" id="f3r5" name="f3" value="1"><span id="r5f3">e) уверенность в своих силах</span><br/>
+<input type="checkbox" id="f3r6" name="f3" value="0"><span id="r6f3">f) состояние повышенной тревожности</span><br/>
+<input type="checkbox" id="f3r7" name="f3" value="1"><span id="r7f3">g) наличие внутренней мотивации к деятельности</span><br/>
+<input type="checkbox" id="f3r8" name="f3" value="0"><span id="r8f3">h) наличие фиксированной установки на конкретный способ решения</span><br/>
+<input type="checkbox" id="f3r9" name="f3" value="1"><span id="r9f3">i) широкий кругозор</span><br/>
+<input type="checkbox" id="f3r10" name="f3" value="0"><span id="r10f3">j) узкая профессиональная специализация</span><br/>
+<br/>
+<br/>
+5. Соотнесите вопросы, которые должны быть решены личностью согласно «алгоритму изобретения» по Альтшуллеру, и стадии решения творческой задачи
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g2" value="4">a) Уточнение формулировки задачи</span></TD>            
+<TD>	a-<select type="select" id="g2r1" name="g2" onchange="asd(2)"><option selected>...<option>1<option >2<option>3<option  value="4">4</select><span id="g2l1" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+
+<TR><TD><span id="r2g2" value="3">b) Аналитическая стадия</span></TD>
+<TD>	b-<select type="select" id="g2r2" name="g2" onchange="asd(2)"><option selected>...<option>1<option>2<option value="3">3<option>4</select><span id="g2l2" class="off" >Правильный ответ: 3</span><br/></TD></TR>
+
+<TR><TD><span id="r3g2" value="2">c) Оперативная стадия</span></TD> 
+<TD>	c-<select type="select" id="g2r3" name="g2" onchange="asd(2)"><option selected>...<option>1<option value="2">2<option>3<option>4</select><span id="g2l3" class="off" >Правильный ответ: 2</span><br/></TD></TR>
+
+<TR><TD><span id="r4g2" value="1">d) Синтетическая стадия</span></TD> 
+<TD>	d-<select type="select" id="g2r4" name="g2" onchange="asd(2)"><option selected>...<option value="1">1<option>2<option>3<option>4</select><span id="g2l4" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<TABLE BORDER=0>
+<TR><TD>1) Может ли новый объект применяться по-новому?</TR></TD>
+<TR><TD>2) Что необходимо сделать?</TR></TD>
+<TR><TD>3) При каких  условиях  ничто не помешало бы  получению  идеального результата?</TR></TD>
+<TR><TD>4) Какова конечная цель, ради достижения которой  поставлена задача?</TR></TD>
+</TABLE>
+<br/>
+<br/>
+6. При проведении метода мозговой атаки рекомендуется
+<br><input type="checkbox" id="f4r1" name="f4" value="0"><span id="r1f4">a) критиковать каждую выдвигаемую идею</span><br/>
+<input type="checkbox" id="f4r2" name="f4" value="1"><span id="r2f4">b)	избегать критики на этапе генерирования идей</span><br/>
+<input type="checkbox" id="f4r3" name="f4" value="1"><span id="r3f4">c) поощрять необузданное ассоциирование</span><br/> 
+<input type="checkbox" id="f4r4" name="f4" value="1"><span id="r4f4">d) выдвигать как можно большее количество идей</span><br/> 
+<input type="checkbox" id="f4r5" name="f4" value="0"><span id="r5f4">e) ограничить количество предположений</span><br/> <input type="checkbox" id="f4r6" name="f4" value="0"><span id="r6f4">f) комбинировать и видоизменять идеи</span><br/>
+<br/>
+<br/>
+7. Для развития творческого потенциала ребенка родители должны
+<br/><input type="checkbox" id="f5r1" name="f5" value="0"><span id="r1f5">a) наказывать его за ошибки</span><br/>
+<input type="checkbox" id="f5r2" name="f5" value="1"><span id="r2f5">b)	поощрять желание ребенка задавать вопросы</span><br/>
+<input type="checkbox" id="f5r3" name="f5" value="1"><span id="r3f5">c)	создавать ситуацию успеха</span><br/>
+<input type="checkbox" id="f5r4" name="f5" value="1"><span id="r4f5">d)	стимулировать самостоятельную деятельность ребенка</span><br/>
+<input type="checkbox" id="f5r5" name="f5" value="0"><span id="r5f5">e)	требовать быстрого и однозначного ответа на поставленный вопрос</span><br/>
+<input type="checkbox" id="f5r6" name="f5" value="1"><span id="r6f5">f)	стимулировать желание ребенка генерировать идеи</span><br/>
+<input type="checkbox" id="f5r7" name="f5" value="0"><span id="r7f5">g)	ставить всегда самим цели перед ребенком и контролировать результаты</span><br/>
+<br/>
+<br/>
+
+<br />
+<input class="Submit" type="button" value="Ответить" onclick="finish()"/>
+<div id="result"></div>
+<input class="Submit" type="button" value="Начать тест заново" onclick="javascript:window.location.reload()"/>
+</form>
+</td></tr></table>
+
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <title>&#207;&#240;&#238;&#236;&#229;&#230;&#243;&#242;&#238;&#247;&#237;&#251;&#233; &#242;&#229;&#241;&#242;</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<style type="text/css">
+.off {display:none}
+.on {display: inline-block; color: blue;}
+</style>
+
+  <script language="javascript">
+    
+	
+	function start()
+	{
+          var totalcount = 0;
+          var itm = document.getElementById("g1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	totalcount++;
+                var ans = 0;
+		var citem=document.getElementById("g"+totalcount+"r1");
+		while (citem!=undefined)
+		{
+			ans++;
+			citem.selectedIndex= 0;
+			var cspan = document.getElementById("r"+ans+"g"+totalcount);
+			cspan.style.color="black";
+			
+			citem = document.getElementById("g"+totalcount+"r"+(ans+1));
+		}
+		itm = document.getElementById("g"+(totalcount+1)+"r1"); 
+	  }
+
+
+
+          var totalcount = 0;
+          var itm = document.getElementById("f1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	totalcount++;
+                var ans = 0;
+		var citem=document.getElementById("f"+totalcount+"r1");
+		while (citem!=undefined)
+		{
+			ans++;
+			citem.checked = false;
+			var cspan = document.getElementById("r"+ans+"f"+totalcount);
+			cspan.style.color="black";
+			
+			citem = document.getElementById("f"+totalcount+"r"+(ans+1));
+		}
+		itm = document.getElementById("f"+(totalcount+1)+"r1"); 
+	  }
+
+
+	  document.getElementById("result").innerHTML = "";
+	}
+	
+
+
+
+
+
+	function finish()
+	{
+	var cor=0;
+		
+          var j = 0;
+          var itm = document.getElementById("g1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	j++;
+		
+		var ans = 0;
+		var citem=document.getElementById("g"+j+"r1");
+		var ck = 0;
+		while (citem!=undefined)
+		{
+			ans++;
+			var cspan = document.getElementById("r"+ans+"g"+j);
+			if (citem.value == cspan.value) {
+				cspan.style.color = "blue";
+				ck++;
+			}
+			else {
+				document.getElementById("g"+j+"l"+ans).className = "on";
+				cspan.style.color = "red";
+			}
+
+			
+			citem = document.getElementById("g"+j+"r"+(ans+1));
+
+		}
+		if (ck == ans){
+			cor++;
+		}
+        itm = document.getElementById("g"+(j+1)+"r1"); 
+	}
+
+
+
+
+	var pr=j;
+	
+          var j = 0;
+          var itm = document.getElementById("f1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	j++;
+		
+		var ans = 0;
+		var citem=document.getElementById("f"+j+"r1");
+		var ck = 0;
+		while (citem!=undefined)
+		{
+			ans++;
+			var cspan = document.getElementById("r"+ans+"f"+j);
+			if (citem.checked == true && citem.value == "1") {
+				cspan.style.color = "blue";
+			}
+			if (citem.checked == true && citem.value == "0") {
+				ck++;
+				cspan.style.color = "red";
+			}
+			if (citem.checked == false && citem.value == "0") {
+				cspan.style.color = "black";
+			}
+			if (citem.checked == false && citem.value == "1") {
+				ck++;
+				cspan.style.color = "blue";
+			}
+			
+			citem = document.getElementById("f"+j+"r"+(ans+1));
+		}
+		if (ck == 0){
+			cor++;
+		}
+        itm = document.getElementById("f"+(j+1)+"r1"); 
+	}
+	  pr=pr+j;
+	  document.getElementById("result").innerHTML = "Количество правильных ответов: "+cor+" из "+pr+" ("+Math.round(cor*100/pr)+"%)";
+
+
+
+
+
+	}
+	
+	
+	function asd(gg){
+	  var mm=new Array();
+	  var pos=0;
+	  
+	  var tr=document.getElementsByName('g'+gg);
+      for(k=0;k<tr.length;k++) 
+        if(tr[k].selectedIndex>0) {mm[pos]=tr[k].selectedIndex; pos++;}
+
+
+
+      for(k=0;k<tr.length;k++){ 
+            for(i=0;i<tr[k].options.length;i++) tr[k].options[i].disabled=false;
+            for(i=0;i<pos;i++) tr[k].options[mm[i]].disabled=true;
+        }
+	   
+	}
+	
+  </script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="start()">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Промежуточный тест</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="umk_osnovy_pedagogiki.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<form>
+1. В каких значениях может употребляться термин «педагогика»
+<br><input type="checkbox" id="f1r1" name="f1" value="0"><span id="r1f1">а) как составляющая психологического знания</span><br/>
+<input type="checkbox" id="f1r2" name="f1" value="1"><span id="r2f1">б) в практическом значении (педагогика выступает как сфера человеческой деятельности)</span><br/>
+<input type="checkbox" id="f1r3" name="f1" value="1"><span id="r3f1">в) как самостоятельная наука</span><br/>
+<input type="checkbox" id="f1r4" name="f1" value="1"><span id="r4f1">г) как учебная дисциплина</span><br/>   
+<input type="checkbox" id="f1r5" name="f1" value="0"><span id="r5f1">д) как отрасль философии</span><br/>
+<input type="checkbox" id="f1r6" name="f1" value="1"><span id="r6f1">е) в бытовом значении (каждый человек на протяжении жизни оказывает воспитательные воздействия на других людей)</span><br/>
+<br/>
+<br/>
+2. Что определило возникновение педагогики как  самостоятельной науки
+<br><input type="checkbox" id="f2r1" name="f2" value="1"><span id="r1f2">a) необходимость  подготовки подрастающего поколения к самостоятельной жизни в обществе</span><br/>
+<input type="checkbox" id="f2r2" name="f2" value="1"><span id="r2f2">б) забота родителей о благополучии детей</span><br/>
+<input type="checkbox" id="f2r3" name="f2" value="0"><span id="r3f2">в) появление различных учреждений образования</span><br/>
+<input type="checkbox" id="f2r4" name="f2" value="0"><span id="r4f2">г) биологический закон сохранения рода</span><br/>   
+<br/>
+<br/>
+3.	Что изучает педагогика
+<br><input type="checkbox" id="f3r1" name="f3" value="1"><span id="r1f3">а) педагогический процесс, обеспечивающий  развитие человека на протяжении всей жизни</span><br/>
+<input type="checkbox" id="f3r2" name="f3" value="0"><span id="r2f3">б)	личность учащегося</span><br/>
+<input type="checkbox" id="f3r3" name="f3" value="0"><span id="r3f3">в)	социальные структуры и их влияние на жизнедеятельность человека</span><br/>
+<input type="checkbox" id="f3r4" name="f3" value="0"><span id="r4f3">г)	условия продуктивного  общения учащегося и учителя</span><br/>
+<br/>
+<br/>
+4.	Есть ли общие черты воспитания для всех исторических этапов  развития общества? Какие ответы соответствуют истине
+<br><input type="checkbox" id="f4r1" name="f4" value="0"><span id="r1f4">а) каждая эпоха  выдвигает свой идеал личности, поэтому общих черт быть не может</span><br/>
+<input type="checkbox" id="f4r2" name="f4" value="0"><span id="r2f4">б)	воспитание – категория вечная и неизменная, поэтому характеризуется  общими чертами для всех эпох</span><br/>
+<input type="checkbox" id="f4r3" name="f4" value="1"><span id="r3f4">в)	воспитание определяется как общими характеристиками, присущими всем этапам развития общества, так и специфическими, которые выдвигает  
+каждая историческая эпоха</span><br/>
+<br/>
+<br/>
+5.	Какие институты воспитания и обучения существовали в период средневековья в Древней Руси
+<br/><input type="checkbox" id="f5r1" name="f5" value="0"><span id="r1f5">а) «община» – воспитание детей общиной, в которой проживает ребенок</span><br/>
+<input type="checkbox" id="f5r2" name="f5" value="1"><span id="r2f5">б)	«кормильство» – своеобразная  форма домашнего воспитания детей феодальной знати</span><br/>
+<input type="checkbox" id="f5r3" name="f5" value="1"><span id="r3f5">в)	«кумовство» – крестные родители становились духовными наставниками детей</span><br/>
+<input type="checkbox" id="f5r4" name="f5" value="1"><span id="r4f5">г)	«мастера грамоты» – мастер-одиночка или целая школа, занимающиеся обучением детей</span><br/>
+<input type="checkbox" id="f5r5" name="f5" value="1"><span id="r5f5">д)	«дядьки» – воспитание ребенка в семье родного дяди</span><br/>
+<br/>
+<br/>
+6.	Выберите основные категории педагогики
+<br><input type="checkbox" id="f6r1" name="f6" value="1"><span id="r1f6">а) воспитание</span><br/>
+<input type="checkbox" id="f6r2" name="f6" value="0"><span id="r2f6">б)	педагогические явления</span><br/>
+<input type="checkbox" id="f6r3" name="f6" value="0"><span id="r3f6">в)	педагогический процесс</span><br/>
+<input type="checkbox" id="f6r4" name="f6" value="1"><span id="r4f6">г)	обучение</span><br/>
+<input type="checkbox" id="f6r5" name="f6" value="0"><span id="r5f6">д)	развитие</span><br/>
+<input type="checkbox" id="f6r6" name="f6" value="1"><span id="r6f6">е)	образование</span><br/>
+<input type="checkbox" id="f6r7" name="f6" value="0"><span id="r7f6">ж)	личность</span><br/>
+<input type="checkbox" id="f6r8" name="f6" value="0"><span id="r8f6">з)	знание</span><br/>
+<input type="checkbox" id="f6r9" name="f6" value="0"><span id="r9f6">и)	социум</span><br/>
+<input type="checkbox" id="f6r10" name="f6" value="0"><span id="r10f6">к)	компетентность</span><br/>
+<br/>
+<br/>
+7.	Что представляет собой воспитание в узком смысле
+<br><input type="checkbox" id="f7r1" name="f7" value="0"><span id="r1f7">а) воздействие на личность общества в целом</span><br/>
+<input type="checkbox" id="f7r2" name="f7" value="0"><span id="r2f7">б)	организация благоприятной среды в учебном заведении</span><br/>
+<input type="checkbox" id="f7r3" name="f7" value="0"><span id="r3f7">в)	организация воспитывающего обучения</span><br/>
+<input type="checkbox" id="f7r4" name="f7" value="0"><span id="r4f7">г)	взаимодействие школы, семьи, общества</span><br/>
+<input type="checkbox" id="f7r5" name="f7" value="1"><span id="r5f7">д)	целенаправленная педагогическая деятельность, призванная сформировать систему качеств личности</span><br/>
+<br/>
+<br/>
+8.	Что представляет собой воспитание в широком  смысле
+<br><input type="checkbox" id="f8r1" name="f8" value="1"><span id="r1f8">а) воздействие на личность общества в целом</span><br/>
+<input type="checkbox" id="f8r2" name="f8" value="0"><span id="r2f8">б)	организация воспитательной среды в учебном заведении</span><br/>
+<input type="checkbox" id="f8r3" name="f8" value="0"><span id="r3f8">в)	организация воспитывающего обучения</span><br/>
+<input type="checkbox" id="f8r4" name="f8" value="0"><span id="r4f8">г)	взаимодействие школы, семьи, общества</span><br/>
+<input type="checkbox" id="f8r5" name="f8" value="0"><span id="r5f8">д)	целенаправленная педагогическая деятельность, призванная сформировать систему качеств личности</span><br/>
+<br/>
+<br/>
+9.	Что в переводе с греческого языка означает слово «педагогика»
+<br><input type="checkbox" id="f9r1" name="f9" value="0"><span id="r1f9">а) воспитание</span><br/>
+<input type="checkbox" id="f9r2" name="f9" value="1"><span id="r2f9">б)	детовождение</span><br/>
+<input type="checkbox" id="f9r3" name="f9" value="0"><span id="r3f9">в)	сопереживание</span><br/>
+<input type="checkbox" id="f9r4" name="f9" value="0"><span id="r4f9">г)	мастерство</span><br/>
+<br/>
+<br/>
+10.	Используя нижепредставленный ряд словосочетаний, вставьте пропущенные слова Педагогика – это наука, изучающая пути и средства ------------- человеком культурно-исторического опыта и -------------  
+его к общекультурным ценностям с учетом его индивидуально-возрастных особенностей
+<br><input type="checkbox" id="f10r1" name="f10" value="1"><span id="r1f10">а) передача – получение, приобщение, подготовка</span><br/>
+<input type="checkbox" id="f10r2" name="f10" value="0"><span id="r2f10">б) исследование, приучение</span><br/>
+<input type="checkbox" id="f10r3" name="f10" value="0"><span id="r3f10">в) регистрация, стимулирование</span><br/>
+<input type="checkbox" id="f10r4" name="f10" value="0"><span id="r4f10">г) приобретение, мотивация</span><br/>
+<br/>
+<br/>
+11.	Объективный процесс внутреннего, последовательного количественного и качественного изменения  физических и духовных сил человека называют
+<br><input type="checkbox" id="f11r1" name="f11" value="0"><span id="r1f11">а) обучением</span><br/>
+<input type="checkbox" id="f11r2" name="f11" value="0"><span id="r2f11">б) воспитанием</span><br/>
+<input type="checkbox" id="f11r3" name="f11" value="1"><span id="r3f11">в) развитием</span><br/>
+<input type="checkbox" id="f11r4" name="f11" value="0"><span id="r4f11">г) образованием</span><br/>
+<br/>
+<br/>
+12.	Процесс передачи культурно-исторического опыта подрастающему поколению с целью подготовки его к самостоятельной жизни и труду называется
+<br><input type="checkbox" id="f12r1" name="f12" value="0"><span id="r1f12">а) обучением</span><br/>
+<input type="checkbox" id="f12r2" name="f12" value="1"><span id="r2f12">б) воспитанием</span><br/>
+<input type="checkbox" id="f12r3" name="f12" value="0"><span id="r3f12">в) развитием</span><br/>
+<input type="checkbox" id="f12r4" name="f12" value="0"><span id="r4f12">г) образованием</span><br/>
+<br/>
+<br/>
+13.	Процесс целенаправленного взаимодействия педагога и обучаемого, в результате которого обеспечиваются усвоение определенной системы знаний, умений, навыков, способов мышления и деятельности и развитие обучающегося, называется
+<br><input type="checkbox" id="f13r1" name="f13" value="1"><span id="r1f13">а) обучением</span><br/>
+<input type="checkbox" id="f13r2" name="f13" value="0"><span id="r2f13">б) воспитанием</span><br/>
+<input type="checkbox" id="f13r3" name="f13" value="0"><span id="r3f13">в) развитием</span><br/>
+<input type="checkbox" id="f13r4" name="f13" value="0"><span id="r4f13">г) образованием</span><br/>
+<br/>
+<br/>
+14.	Процесс и результат усвоения человеком опыта поколений в виде системы знаний, умений и навыков, способов творческой деятельности, отношений называется
+<br><input type="checkbox" id="f14r1" name="f14" value="1"><span id="r1f14">а) образованием</span><br/>
+<input type="checkbox" id="f14r2" name="f14" value="0"><span id="r2f14">б) воспитанием</span><br/>
+<input type="checkbox" id="f14r3" name="f14" value="0"><span id="r3f14">в) обучением</span><br/>
+<input type="checkbox" id="f14r4" name="f14" value="0"><span id="r4f14">г) развитием</span><br/>
+<br/>
+<br/>
+15.	Установите соответствие между характеристиками методологических подходов педагогики и их названием
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g1" value="2">a) Какая из образовательных парадигм признает в образовательных системах личность как высшую ценность и </br>основывается на гуманистических моральных нормах, предполагающих сотрудничество, оказание  помощи и поддержку личности</span></TD>            
+<TD>	a-<select type="select" id="g1r1" name="g1" onchange="asd(1)"><option selected>...<option>1<option value="2">2<option>3<option>4<option>5<option>6</select><span id="g1l1" class="off" >Правильный ответ: 2</span><br/></TD></TR>
+
+<TR><TD><span id="r2g1" value="5">б) Какая из образовательных парадигм ориентирует на создание образовательноразвивающей среды и </br>благоприятных условий для становления и эффективного развития всех детей, более полный учет их индивидуальных особенностей</span></TD>
+<TD>	b-<select type="select" id="g1r2" name="g1" onchange="asd(1)"><option selected>...<option>1<option>2<option>3<option>4<option value="5">5<option>6</select><span id="g1l2" class="off" >Правильный ответ: 5</span><br/></TD></TR>
+
+<TR><TD><span id="r3g1" value="4">в) Какая из образовательных парадигм направлена не только на овладение учениками знаниями, умениями </br>и навыками, но и на освоение элементов культуры, общечеловеческих ценностей, способов познания и поведения, при этом особое </br>внимание уделяется формированию языковой, правовой, экологической и др. культуры</span></TD> 
+<TD>	c-<select type="select" id="g1r3" name="g1" onchange="asd(1)"><option selected>...<option>1<option>2<option>3<option value="4">4<option>5<option>6</select><span id="g1l3" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<TABLE BORDER=0>
+<TR><TD>1) знаниевая</TR></TD>
+<TR><TD>2) гуманистическая</TR></TD>
+<TR><TD>3) человекоориентироанная</TR></TD>
+<TR><TD>4) культурологическая</TR></TD>
+<TR><TD>5) детоцентристская</TR></TD>
+<TR><TD>6) социетарная</TR></TD>
+</TABLE>
+<br/>
+<br/>
+
+
+16.	Учение о системе принципов и способов организации и построения теоретической и практической деятельности называют
+<br><input type="checkbox" id="f15r1" name="f15" value="0"><span id="r1f15">а) концепцией</span><br/>
+<input type="checkbox" id="f15r2" name="f15" value="0"><span id="r2f15">б) парадигмой</span><br/>
+<input type="checkbox" id="f15r3" name="f15" value="0"><span id="r3f15">в) категорией</span><br/>
+<input type="checkbox" id="f15r4" name="f15" value="1"><span id="r4f15">г) методологией</span><br/>
+<br/>
+<br/>
+
+17.	Установите соответствие между характеристиками методологических подходов педагогики и их названием
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g2" value="1">a) Предполагает ориентацию при осуществлении  
+педагогического </br>процесса на личность как цель, результат, субъект, главный критерий его эффективности; признание  
+</br>уникальности личности и учет ее индивидуальных особенностей</span></TD>            
+<TD>	a-<select type="select" id="g2r1" name="g2" onchange="asd(2)"><option selected>...<option value="1">1<option  
+>2<option>3<option>4<option>5</select><span id="g2l1" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+
+<TR><TD><span id="r2g2" value="5">б) Предполагает развитие человека, становление  
+его в качестве </br>творческой личности посредством освоения культуры как системы ценностей</span></TD>
+<TD>	b-<select type="select" id="g2r2" name="g2" onchange="asd(2)"><option selected>...<option>1<option>2<option>3<option>4<option value="5">5</select><span id="g2l2" class="off" >Правильный ответ: 5</span><br/></TD></TR>
+
+<TR><TD><span id="r3g2" value="4">в) Предполагает системное использование и  
+учет данных всех </br>человековедческих наук при организации  и осуществлении педагогического процесса внимание  
+</br>уделяется формированию языковой, правовой, экологической и др. культуры</span></TD> 
+<TD>	c-<select type="select" id="g2r3" name="g2" onchange="asd(2)"><option selected>...<option>1<option>2<option>3<option value="4">4<option>5</select><span id="g2l3" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<TABLE BORDER=0>
+<TR><TD>1) личностный подход</TR></TD>
+<TR><TD>2) системный подход</TR></TD>
+<TR><TD>3) деятельностный подход</TR></TD>
+<TR><TD>4) антропологический подход</TR></TD>
+<TR><TD>5) культурологический подход</TR></TD>
+</TABLE>
+<br/>
+<br/>
+
+18.	Определите, в какой группе указаны  основные методы научно-педагогического исследования, направленные на изучение педагогического опыта
+<br><input type="checkbox" id="f16r1" name="f16" value="0"><span id="r1f16">а) анализ, синтез, дедукция, индукция, эксперимент</span><br/>
+<input type="checkbox" id="f16r2" name="f16" value="1"><span id="r2f16">б) наблюдение, эксперимент, беседа, моделирование</span><br/>
+<input type="checkbox" id="f16r3" name="f16" value="0"><span id="r3f16">в) тесты, анкеты, составление алгоритмов, обобщение опыта</span><br/>
+<input type="checkbox" id="f16r4" name="f16" value="0"><span id="r4f16">г) социометрические измерения, интервьюирование, анализ</span><br/>
+<br/>
+<br/>
+
+<br />
+<input class="Submit" type="button" value="Ответить" onclick="finish()"/>
+<div id="result"></div>
+<input class="Submit" type="button" value="Начать тест заново" onclick="javascript:window.location.reload()"/>
+</form>
+</td></tr></table>
+
+</body>
+</html>

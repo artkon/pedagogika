@@ -1,0 +1,387 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <title>&#207;&#240;&#238;&#236;&#229;&#230;&#243;&#242;&#238;&#247;&#237;&#251;&#233; &#242;&#229;&#241;&#242;</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=Windows-1251" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+<style type="text/css">
+.off {display:none}
+.on {display: inline-block; color: blue;}
+</style>
+
+  <script language="javascript">
+    
+	
+	function start()
+	{
+          var totalcount = 0;
+          var itm = document.getElementById("g1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	totalcount++;
+                var ans = 0;
+		var citem=document.getElementById("g"+totalcount+"r1");
+		while (citem!=undefined)
+		{
+			ans++;
+			citem.selectedIndex= 0;
+			var cspan = document.getElementById("r"+ans+"g"+totalcount);
+			cspan.style.color="black";
+			
+			citem = document.getElementById("g"+totalcount+"r"+(ans+1));
+		}
+		itm = document.getElementById("g"+(totalcount+1)+"r1"); 
+	  }
+
+
+
+          var totalcount = 0;
+          var itm = document.getElementById("f1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	totalcount++;
+                var ans = 0;
+		var citem=document.getElementById("f"+totalcount+"r1");
+		while (citem!=undefined)
+		{
+			ans++;
+			citem.checked = false;
+			var cspan = document.getElementById("r"+ans+"f"+totalcount);
+			cspan.style.color="black";
+			
+			citem = document.getElementById("f"+totalcount+"r"+(ans+1));
+		}
+		itm = document.getElementById("f"+(totalcount+1)+"r1"); 
+	  }
+
+
+	  document.getElementById("result").innerHTML = "";
+	}
+	
+
+
+
+
+
+	function finish()
+	{
+	var cor=0;
+		
+          var j = 0;
+          var itm = document.getElementById("g1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	j++;
+		
+		var ans = 0;
+		var citem=document.getElementById("g"+j+"r1");
+		var ck = 0;
+		while (citem!=undefined)
+		{
+			ans++;
+			var cspan = document.getElementById("r"+ans+"g"+j);
+			if (citem.value == cspan.value) {
+				cspan.style.color = "blue";
+				ck++;
+			}
+			else {
+				document.getElementById("g"+j+"l"+ans).className = "on";
+				cspan.style.color = "red";
+			}
+
+			
+			citem = document.getElementById("g"+j+"r"+(ans+1));
+
+		}
+		if (ck == ans){
+			cor++;
+		}
+        itm = document.getElementById("g"+(j+1)+"r1"); 
+	}
+
+
+
+
+	var pr=j;
+	
+          var j = 0;
+          var itm = document.getElementById("f1r1"); 	
+	  while (itm!=undefined)
+	  {
+	  	j++;
+		
+		var ans = 0;
+		var citem=document.getElementById("f"+j+"r1");
+		var ck = 0;
+		while (citem!=undefined)
+		{
+			ans++;
+			var cspan = document.getElementById("r"+ans+"f"+j);
+			if (citem.checked == true && citem.value == "1") {
+				cspan.style.color = "blue";
+			}
+			if (citem.checked == true && citem.value == "0") {
+				ck++;
+				cspan.style.color = "red";
+			}
+			if (citem.checked == false && citem.value == "0") {
+				cspan.style.color = "black";
+			}
+			if (citem.checked == false && citem.value == "1") {
+				ck++;
+				cspan.style.color = "blue";
+			}
+			
+			citem = document.getElementById("f"+j+"r"+(ans+1));
+		}
+		if (ck == 0){
+			cor++;
+		}
+        itm = document.getElementById("f"+(j+1)+"r1"); 
+	}
+	  pr=pr+j;
+	  document.getElementById("result").innerHTML = "Количество правильных ответов: "+cor+" из "+pr+" ("+Math.round(cor*100/pr)+"%)";
+
+
+
+
+
+	}
+	
+	
+	function asd(gg){
+	  var mm=new Array();
+	  var pos=0;
+	  
+	  var tr=document.getElementsByName('g'+gg);
+      for(k=0;k<tr.length;k++) 
+        if(tr[k].selectedIndex>0) {mm[pos]=tr[k].selectedIndex; pos++;}
+
+
+
+      for(k=0;k<tr.length;k++){ 
+            for(i=0;i<tr[k].options.length;i++) tr[k].options[i].disabled=false;
+            for(i=0;i<pos;i++) tr[k].options[mm[i]].disabled=true;
+        }
+	   
+	}
+	
+  </script>
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;" onload="start()">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5" bgcolor="#649CCC">
+  <tr valign="middle">
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Промежуточный тест</span></p>
+
+    </td>
+    <td align="right">
+     <span style="font-size: 9pt">
+     <a href="umk_osnovy_pedagogiki.htm">Top</a>&nbsp;
+     
+     
+     </span>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<form>
+1. Укажите правильные утверждения, отражающие суть процесса социализации человека
+<br><input type="checkbox" id="f1r1" name="f1" value="1"><span id="r1f1">а) становление социальной сущности человека</span><br/>
+<input type="checkbox" id="f1r2" name="f1" value="0"><span id="r2f1">б) развитие природных задатков ученика</span><br/>
+<input type="checkbox" id="f1r3" name="f1" value="0"><span id="r3f1">в) целенаправленный и регулируемый процесс</span><br/>
+<input type="checkbox" id="f1r4" name="f1" value="1"><span id="r4f1">г) непрерывный процесс</span><br/>   
+<input type="checkbox" id="f1r5" name="f1" value="1"><span id="r5f1">д) включает адаптацию и обособление человека в обществе</span><br/>
+<input type="checkbox" id="f1r6" name="f1" value="0"><span id="r6f1">е) предполагает исключительно приспособление человека к среде обитания</span><br/>
+<input type="checkbox" id="f1r7" name="f1" value="0"><span id="r7f1">ж) может не затрагивать отдельных людей</span><br/>
+<br/>
+<br/>
+2. Какие утверждения соответствуют субъект-субъектному подходу к пониманию социализации
+<br><input type="checkbox" id="f2r1" name="f2" value="0"><span id="r1f2">а)	указывает на пассивность человека в социализации</span><br/>
+<input type="checkbox" id="f2r2" name="f2" value="1"><span id="r2f2">б)	утверждает активную позицию человека в социализации</span><br/>   
+<input type="checkbox" id="f2r3" name="f2" value="0"><span id="r3f2">в)	социализация приравнивается к адаптации</span><br/>   
+<input type="checkbox" id="f2r4" name="f2" value="1"><span id="r4f2">г)	социализация с обособлением и адаптацией</span><br/>   
+<input type="checkbox" id="f2r5" name="f2" value="0"><span id="r5f2">д)	социализация с идеологией общества</span><br/>   
+<br/>
+<br/>
+3. Расположите в порядке возрастания силы воздействия на человека факторы социализации
+<TABLE BORDER=0>  
+<TR><TD><span id="r1g1" value="2">a) макрофакторы</span></TD>            
+<TD>	a-<select type="select" id="g1r1" name="g1" onchange="asd(1)"><option selected>...<option>1<option value="2">2<option>3<option>4</select><span id="g1l1" class="off" >Правильный ответ: 2</span><br/></TD></TR>
+
+<TR><TD><span id="r2g1" value="3">б) мезафакторы</span></TD>
+<TD>	б-<select type="select" id="g1r2" name="g1" onchange="asd(1)"><option selected>...<option>1<option>2<option value="3">3<option>4</select><span id="g1l2" class="off" >Правильный ответ: 3</span><br/></TD></TR>
+
+<TR><TD><span id="r3g1" value="4">в) микрофакторы</span></TD> 
+<TD>	в-<select type="select" id="g1r3" name="g1" onchange="asd(1)"><option selected>...<option>1<option>2<option>3<option value="4">4</select><span id="g1l3" class="off" >Правильный ответ: 4</span><br/></TD></TR>
+
+<TR><TD><span id="r4g1" value="1">г) мегафакторы</span></TD> 
+<TD>	г-<select type="select" id="g1r4" name="g1" onchange="asd(1)"><option selected>...<option value="1">1<option>2<option>3<option>4</select><span id="g1l4" class="off" >Правильный ответ: 1</span><br/></TD></TR>
+</TABLE>        
+<br/>
+<br/>
+4. К макрофакторам социализации относятся
+<br><input type="checkbox" id="f3r1" name="f3" value="1"><span id="r1f3">а) государство</span><br/>
+<input type="checkbox" id="f3r2" name="f3" value="0"><span id="r2f3">б)	планета</span><br/>
+<input type="checkbox" id="f3r3" name="f3" value="1"><span id="r3f3">в)	народ</span><br/>
+<input type="checkbox" id="f3r4" name="f3" value="0"><span id="r4f3">г)	семья</span><br/>
+<input type="checkbox" id="f3r5" name="f3" value="1"><span id="r5f3">д)	нация</span><br/>
+<br/>
+<br/>
+5. Микрофакторами социализации являются
+<br><input type="checkbox" id="f4r1" name="f4" value="0"><span id="r1f4">а) космос</span><br/>
+<input type="checkbox" id="f4r2" name="f4" value="1"><span id="r2f4">б) соседи</span><br/>
+<input type="checkbox" id="f4r3" name="f4" value="0"><span id="r3f4">в) общество</span><br/>
+<input type="checkbox" id="f4r4" name="f4" value="1"><span id="r4f4">г) группа</span><br/>
+<input type="checkbox" id="f4r5" name="f4" value="1"><span id="r5f4">д) семья</span><br/>
+<br/>
+<br/>
+6. Мегафакторами социализации выступают
+<br><input type="checkbox" id="f5r1" name="f5" value="0"><span id="r1f5">а) нация</span><br/>
+<input type="checkbox" id="f5r2" name="f5" value="1"><span id="r2f5">б) планета</span><br/>
+<input type="checkbox" id="f5r3" name="f5" value="1"><span id="r3f5">в) космос</span><br/>
+<input type="checkbox" id="f5r4" name="f5" value="0"><span id="r4f5">г) государство</span><br/>
+<input type="checkbox" id="f5r5" name="f5" value="0"><span id="r5f5">д) СМИ</span><br/>
+<br/>
+<br/>
+7. Социализированность
+<br><input type="checkbox" id="f6r1" name="f6" value="1"><span id="r1f6">а) это результат социализации</span><br/>
+<input type="checkbox" id="f6r2" name="f6" value="0"><span id="r2f6">б) имеет стабильный характер</span><br/>
+<input type="checkbox" id="f6r3" name="f6" value="1"><span id="r3f6">в) может быть неэффективной</span><br/>
+<input type="checkbox" id="f6r4" name="f6" value="0"><span id="r4f6">г) зависит от наследственности</span><br/>
+<input type="checkbox" id="f6r5" name="f6" value="1"><span id="r5f6">д) отражает степень включенности человека в социум</span><br/>
+<br/>
+<br/>
+8. Социальная виктимология изучает
+<br><input type="checkbox" id="f7r1" name="f7" value="0"><span id="r1f7">а) стадии социализации</span><br/>
+<input type="checkbox" id="f7r2" name="f7" value="0"><span id="r2f7">б)	факторы социализации</span><br/>
+<input type="checkbox" id="f7r3" name="f7" value="1"><span id="r3f7">в)	жертвы социализации</span><br/>
+<input type="checkbox" id="f7r4" name="f7" value="0"><span id="r4f7">г)	виды социализации</span><br/>
+<input type="checkbox" id="f7r5" name="f7" value="0"><span id="r5f7">д)	механизмы социализации</span><br/>
+<br/>
+<br/>
+9. Реальными жертвами социализации принято считать
+<br><input type="checkbox" id="f8r1" name="f8" value="0"><span id="r1f8">а) мигрантов</span><br/>
+<input type="checkbox" id="f8r2" name="f8" value="1"><span id="r2f8">б) инвалидов</span><br/>
+<input type="checkbox" id="f8r3" name="f8" value="0"><span id="r3f8">в) метисов</span><br/>
+<input type="checkbox" id="f8r4" name="f8" value="0"><span id="r4f8">г) представителей нацменьшинств</span><br/>
+<input type="checkbox" id="f8r5" name="f8" value="1"><span id="r5f8">д) сирот</span><br/>
+<br/>
+<br/>
+10. Латентными жертвами социализации считают
+<br><input type="checkbox" id="f9r1" name="f9" value="0"><span id="r1f9">а) инвалидов</span><br/>
+<input type="checkbox" id="f9r2" name="f9" value="0"><span id="r2f9">б) сирот</span><br/>
+<input type="checkbox" id="f9r3" name="f9" value="0"><span id="r3f9">в) беженцев</span><br/>
+<input type="checkbox" id="f9r4" name="f9" value="1"><span id="r4f9">г) несостоявшихся гениев</span><br/>
+<input type="checkbox" id="f9r5" name="f9" value="0"><span id="r5f9">д) метисов</span><br/>
+<br/>
+<br/>
+11. Совокупность социальных отношений, ежедневно разворачивающихся перед человеком в образе слов, действий, поступков людей, в определенном образе вещей, интерьера, архитектурного ансамбля и пр., – это
+<br><input type="checkbox" id="f10r1" name="f10" value="0"><span id="r1f10">а) социализация</span><br/>
+<input type="checkbox" id="f10r2" name="f10" value="0"><span id="r2f10">б) воспитательный процесс</span><br/>
+<input type="checkbox" id="f10r3" name="f10" value="0"><span id="r3f10">в) коллектив</span><br/>
+<input type="checkbox" id="f10r4" name="f10" value="1"><span id="r4f10">г) социальное пространство</span><br/>
+<br/>
+<br/>
+12. Группа людей, объединенных общими, имеющими общественную и личностную значимость целями и совместной деятельностью, которая организуется для их достижения, – это
+<br><input type="checkbox" id="f11r1" name="f11" value="0"><span id="r1f11">а) социум</span><br/>
+<input type="checkbox" id="f11r2" name="f11" value="0"><span id="r2f11">б) воспитательный процесс</span><br/>
+<input type="checkbox" id="f11r3" name="f11" value="1"><span id="r3f11">в) коллектив</span><br/>
+<input type="checkbox" id="f11r4" name="f11" value="0"><span id="r4f11">г) социальные отношения</span><br/>
+<input type="checkbox" id="f11r5" name="f11" value="0"><span id="r5f11">д) семья</span><br/>
+<br/>
+<br/>
+13. Развитый коллектив от произвольной группы людей отличает
+<br><input type="checkbox" id="f12r1" name="f12" value="0"><span id="r1f12">a)	получение группой своего названия</span><br/>
+<input type="checkbox" id="f12r2" name="f12" value="1"><span id="r2f12">б)	включение членов группы в разнообразную социальную деятельность</span><br/>
+<input type="checkbox" id="f12r3" name="f12" value="0"><span id="r3f12">в)	нивелирование  индивидуальных интересов членов группы</span><br/>
+<input type="checkbox" id="f12r4" name="f12" value="1"><span id="r4f12">г)	наличие традиций</span><br/>
+<input type="checkbox" id="f12r5" name="f12" value="1"><span id="r5f12">д)	развитые критика и самокритика членов группы</span><br/>
+<input type="checkbox" id="f12r6" name="f12" value="1"><span id="r6f12">е)	атмосфера взаимопомощи</span><br/>
+<input type="checkbox" id="f12r7" name="f12" value="1"><span id="r7f12">ж)	сознательная дисциплинаы</span><br/>
+<input type="checkbox" id="f12r8" name="f12" value="1"><span id="r8f12">з)	наличие общих личностно и общественно значимых целей</span><br/>
+<input type="checkbox" id="f12r9" name="f12" value="1"><span id="r9f12">и)	систематическая организация совместной деятельности членов группы</span><br/>
+<input type="checkbox" id="f12r10" name="f12" value="1"><span id="r10f12">к)	практическая связь группы с обществом</span><br/>
+<input type="checkbox" id="f12r11" name="f12" value="0"><span id="r11f12">л)	жесткое управление группой ее лидером</span><br/>
+<br/>
+<br/>
+14. Укажите  основные задачи и направления работы с коллективом
+<br><input type="checkbox" id="f13r1" name="f13" value="0"><span id="r1f13">a)	выбор авторитарного стиля общения руководителя с коллективом как наиболее удачного для эффективного руководства</span><br/>
+<input type="checkbox" id="f13r2" name="f13" value="1"><span id="r2f13">б)	формирование у членов группы понимания единой цели общих интересов, их принятие и сопоставление с собственными  
+потребностями</span><br/>
+<input type="checkbox" id="f13r3" name="f13" value="0"><span id="r3f13">в)	выделение из коллектива мелких групп,  формирование у них собственных (автономных) целей</span><br/>
+<input type="checkbox" id="f13r4" name="f13" value="1"><span id="r4f13">г)	создание актива коллектива</span><br/>
+<input type="checkbox" id="f13r5" name="f13" value="1"><span id="r5f13">д)	создание демократической структуры самоуправления в коллективе</span><br/>
+<input type="checkbox" id="f13r6" name="f13" value="1"><span id="r6f13">е)	организация деятельности коллектива, выходящей за рамки его основной деятельности</span><br/>
+<input type="checkbox" id="f13r7" name="f13" value="1"><span id="r7f13">ж)	организация обучения членов коллектива организацинно-управленческим навыкам</span><br/>
+<br/>
+<br/>
+15. Укажите  психолого-педагогические положения, которыми следует руководствоваться при организации семейного воспитания
+<br><input type="checkbox" id="f14r1" name="f14" value="0"><span id="r1f14">a)	обеспечение беспрекословного подчинения детей родителям</span><br/>
+<input type="checkbox" id="f14r2" name="f14" value="1"><span id="r2f14">б)	милосердие к ребенку</span><br/>
+<input type="checkbox" id="f14r3" name="f14" value="0"><span id="r3f14">в)	создание и соблюдение «дистанции» между родителями и детьми</span><br/>
+<input type="checkbox" id="f14r4" name="f14" value="1"><span id="r4f14">г)	создание и поддержание открытых и доверительных отношений</span><br/>
+<input type="checkbox" id="f14r5" name="f14" value="1"><span id="r5f14">д)	вовлеченность детей в жизнедеятельность семьи как ее равноправных участников</span><br/>
+<input type="checkbox" id="f14r6" name="f14" value="0"><span id="r6f14">е)	отстранение детей от принятия решения по ключевым вопросам жизнедеятельности семьи</span><br/>
+<input type="checkbox" id="f14r7" name="f14" value="1"><span id="r7f14">ж)	согласованность требований и последовательность действий родителей в семейном воспитании</span><br/>
+<input type="checkbox" id="f14r8" name="f14" value="0"><span id="r8f14">з)	ограждение детей от реальных проблем, стоящих перед семьей</span><br/>
+<br/>
+<br/>
+16. Выделите функции семьи
+<br><input type="checkbox" id="f15r1" name="f15" value="0"><span id="r1f15">а) аналитическая</span><br/>
+<input type="checkbox" id="f15r2" name="f15" value="1"><span id="r2f15">б) репродуктивная</span><br/>
+<input type="checkbox" id="f15r3" name="f15" value="0"><span id="r3f15">в) проективная</span><br/>
+<input type="checkbox" id="f15r4" name="f15" value="0"><span id="r4f15">г) диагностическая</span><br/>
+<input type="checkbox" id="f15r5" name="f15" value="1"><span id="r5f15">д) экономическая</span><br/>
+<input type="checkbox" id="f15r6" name="f15" value="0"><span id="r6f15">е) целеполагания</span><br/>
+<input type="checkbox" id="f15r7" name="f15" value="0"><span id="r7f15">ж) дифференциации</span><br/>
+<input type="checkbox" id="f15r8" name="f15" value="1"><span id="r8f15">з) воспитательная</span><br/>
+<input type="checkbox" id="f15r9" name="f15" value="1"><span id="r9f15">и) хозяйственно-бытовая</span><br/>
+<input type="checkbox" id="f15r10" name="f15" value="0"><span id="r10f15">к) планирования</span><br/>
+<input type="checkbox" id="f15r11" name="f15" value="1"><span id="r11f15">л) первичной социализации</span><br/>
+<input type="checkbox" id="f15r12" name="f15" value="0"><span id="r12f15">м) оценочная</span><br/>
+<input type="checkbox" id="f15r13" name="f15" value="0"><span id="r13f15">н) управления</span><br/>
+<input type="checkbox" id="f15r14" name="f15" value="0"><span id="r14f15">о) организаторская</span><br/>
+<input type="checkbox" id="f15r15" name="f15" value="1"><span id="r15f15">п) рекреационная</span><br/>
+<input type="checkbox" id="f15r16" name="f15" value="0"><span id="r16f15">р) контрольная</span><br/>
+<input type="checkbox" id="f15r17" name="f15" value="0"><span id="r17f15">с) систематизации</span><br/>
+<input type="checkbox" id="f15r18" name="f15" value="0"><span id="r18f15">т) наказания</span><br/>
+<input type="checkbox" id="f15r19" name="f15" value="1"><span id="r19f15">у) психотерапевтическая</span><br/>
+<br/>
+<br/>
+17. Укажите внутренние факторы, влияющие на семейное воспитание
+<br><input type="checkbox" id="f16r1" name="f16" value="0"><span id="r1f16">а) естественная убыль населения</span><br/>
+<input type="checkbox" id="f16r2" name="f16" value="1"><span id="r2f16">б) духовное единство семьи</span><br/>
+<input type="checkbox" id="f16r3" name="f16" value="1"><span id="r3f16">в) уровень педагогической культуры родителей</span><br/>
+<input type="checkbox" id="f16r4" name="f16" value="1"><span id="r4f16">г) жилищные и материально-бытовые условия  семьи</span><br/>
+<input type="checkbox" id="f16r5" name="f16" value="0"><span id="r5f16">д) воздействие политических, социально-экономических и экологических условий</span><br/>
+<input type="checkbox" id="f16r6" name="f16" value="1"><span id="r6f16">е) семейные традиции, обычаи и обряды</span><br/>
+<input type="checkbox" id="f16r7" name="f16" value="1"><span id="r7f16">ж) структура семьи и ее количественный состав</span><br/>
+<input type="checkbox" id="f16r8" name="f16" value="0"><span id="r8f16">з) большое количество разводов</span><br/>
+<input type="checkbox" id="f16r9" name="f16" value="0"><span id="r9f16">и) ухудшение репродуктивного здоровья населения</span><br/>
+<input type="checkbox" id="f16r10" name="f16" value="1"><span id="r10f16">к) авторитет родителей</span><br/>
+<input type="checkbox" id="f16r11" name="f16" value="0"><span id="r11f16">л) кризис воспитания</span><br/>
+<input type="checkbox" id="f16r12" name="f16" value="1"><span id="r12f16">м) выполнение родителями функций материнства и отцовства</span><br/>
+<input type="checkbox" id="f16r13" name="f16" value="1"><span id="r13f16">н) характер трудовой деятельности членов семьи, атмосфера трудолюбия</span><br/>
+<br/>
+<br/>
+
+<br />
+<input class="Submit" type="button" value="Ответить" onclick="finish()"/>
+<div id="result"></div>
+<input class="Submit" type="button" value="Начать тест заново" onclick="javascript:window.location.reload()"/>
+</form>
+</td></tr></table>
+
+</body>
+</html>
